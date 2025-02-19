@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: url('https://c0.wallpaperflare.com/preview/789/637/166/backlit-chiemsee-dawn-desktop-backgrounds.jpg') no-repeat center center/cover;
+        }
+        .sidebar {
+            width: 25%;
+                
+            color: white;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 0.9;
+                transform: translateX(0);
+            }
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            opacity: 0.4;
+            transform: scale(0.8);
+            animation: popIn 1s ease-in-out 0.5s forwards;
+        }
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .profile h2, .profile p, .social-links, .download-btn {
+            opacity: 0;
+            animation: fadeSlideIn 1s ease-in-out 0.8s forwards;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 0.4;
+                transform: translateY(0);
+            }
+        }
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #007bff;
+        }
+        .download-btn {
+            padding: 12px 25px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        .download-btn:hover {
+            background: white;
+            color: #333;
+        }
+        .content {
+            width: 75%;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .skills {
+            margin-top: 30px;
+        }
+        .skills h3 {
+            margin-bottom: 20px;
+        }
+        .skill-category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .skill p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        progress {
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            appearance: none;
+        }
+        progress::-webkit-progress-bar {
+            background: #ddd;
+            border-radius: 5px;
+        }
+        progress::-webkit-progress-value {
+            background: #007bff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="https://annemariesegal.com/wp-content/uploads/2017/04/adobestock_86346713-cropped-young-woman-in-suit.jpg?w=1200" alt="Profile Picture">
+            <h2>Alex Smith</h2>
+            <p>Web Designer</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button class="download-btn" aria-label="Download CV">Download CV</button>
+        </div>
+    </aside>
+    <main class="content">
+        <section id="resume" class="resume-section">
+            <h2>Resume</h2>
+            <div class="education">
+                <h3>Education</h3>
+                <div>
+                    <h4>Frontend Development</h4>
+                    <p>University of Studies, 2008</p>
+                </div>
+                <div>
+                    <h4>Graphic Design</h4>
+                    <p>University of Studies, 2007</p>
+                </div>
+            </div>
+            <div class="experience">
+                <h3>Experience</h3>
+                <div>
+                    <h4>Lead UI/UX Designer</h4>
+                    <p>Google, 2016 - Present</p>
+                </div>
+                <div>
+                    <h4>Senior UI/UX Designer</h4>
+                    <p>Adobe, 2013 - 2016</p>
+                </div>
+            </div>
+        </section>
+        <section class="skills">
+            <h3>Skills</h3>
+            <div class="skill-category">
+                <h4>Coding Skills</h4>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <progress value="95" max="100"></progress> 95%
+                </div>
+                <div class="skill">
+                    <p>PHP</p>
+                    <progress value="85" max="100"></progress> 85%
+                </div>
+                <div class="skill">
+                    <p>HTML/CSS</p>
+                    <progress value="100" max="100"></progress> 100%
+                </div>
+                <div class="skill">
+                    <p>Smarty/Twig</p>
+                    <progress value="75" max="100"></progress> 75%
+                </div>
+                <div class="skill">
+                    <p>Perl</p>
+                    <progress value="90" max="100"></progress> 90%
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
